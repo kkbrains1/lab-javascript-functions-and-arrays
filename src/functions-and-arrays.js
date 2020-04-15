@@ -72,6 +72,19 @@ const averageNumbers = (numbersAvg) => {
  return sumNumbers(numbersAvg) / numbersAvg.length;
 }
 
+//Bonus - Iteration #4.1: A generic avg() function
+
+
+const avg = (mixedArr) => {
+  if (!mixedArr.length) {
+    return null;
+  }
+  let total =  sum(mixedArr) / mixedArr.length
+  return 1*total.toFixed(2) ;
+}
+
+// should return: 5.7
+
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
