@@ -26,12 +26,38 @@ findLongestWord(words);
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 const sumNumbers = (numbers) => {
-  let sum = 0;
+  let sums = 0;
   for (number of numbers) {
-    sum += number
+    sums += number
   } 
- return sum;
+ return sums;
 }
+
+//Bonus - Iteration #3.1: A generic sum() function
+
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+
+// should return: 57
+
+const sum = (mixedArr) => {
+  if (!mixedArr.length) {
+    return 0;
+  }
+  let sum = 0;
+  for (values of mixedArr) {
+    if (typeof values === "object" || typeof values === "array" ) {
+      throw new Error("Error: Unsupported data type sir or ma'am");
+      //return
+    } else if (typeof values === "number") {
+      sum += values;
+    } else if (typeof values === "string") {
+      sum += values.length;
+    } else if (typeof values === "boolean" && values === true) {
+      sum += 1;
+    } 
+  }  return sum
+}
+
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
@@ -81,7 +107,7 @@ const uniquifyArray = (wordsUnique) => {
   if (wordsUnique.length === 0) {
     return null;
   }
-  for (i = 0; i < wordsUnique.length; i++) {
+  for (i = 0; i < wordsUnique.length + 1 ; i++) {
     for (j = i + 1; j < wordsUnique.length; j++) {
        if (wordsUnique[i] === wordsUnique[j]) {
         wordsUnique.splice(j, 1);  
